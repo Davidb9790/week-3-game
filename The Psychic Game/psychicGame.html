@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Psychic Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+<body>
+
+<div id="game">
+
+</div>
+
+<script type="text/javascript">
+
+// Create an array that lists out all of the options
+var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var userInput = [];
+
+
+// initialize counters
+var wins = 0;
+var losses = 0;
+var lives = 15;
+var userGuess
+
+document.querySelector('#game').innerHTML = '<p>Please press a key: A through Z to begin game.</p>';
+// Create code to randomly choose one of the three options (Computer) 
+	var randomNumber = Math.random();
+	var optionsIndex = Math.floor(randomNumber * options.length);
+	var computerGuess = options[optionsIndex];
+	console.log('computer chose', computerGuess);
+
+	// Captures Key Clicks
+	document.onkeyup = function (event) {
+	
+	// Determines which exact key was selected. Make it lowercase
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	console.log('user chose', userGuess);
+
+
+if (lives === 0) {
+	losses++;
+	lives=15;
+	//document.write('Game Over!! Please refresh to start again')
+}else if( userGuess === computerGuess){
+	wins++; 
+	lives=15;
+	//
+	//computerGuess = option.optionsIndex[];
+}else if (userGuess != computerGuess) {
+	lives--;
+	userInput.push(userGuess);
+	console.log(computerGuess);
+};
+//another If statement
+if(losses ===7){
+	alert("Game Over");
+	
+};
+
+	// document.write("The Psychic Game By: David Bermudez")
+	document.querySelector('#game').innerHTML=
+	  '<h1>The Psychic Game By: David Bermudez </h1>'+
+	  '<p>Guess What Letter I\'m Thinking of</p>' +
+	  '<p>Wins: ' + wins + '</p>' +
+	  '<p>Losses: ' + losses + '</p>' +
+	  '<p>Lives: ' + lives + '</p>' +
+	  '<p>Users Guesses: ' +  userInput;
+};
+
+
+</script>
+</body>
+</html>

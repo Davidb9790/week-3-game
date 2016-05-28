@@ -1,0 +1,12 @@
+h1{
+	text-align: center;
+	font-size: 36px;
+}
+p{
+	font-size: 26px;
+	font-family:'Georgia','Times', 'Times New Roman', 'serif' ;
+	font-weight: bold;
+};
+body{
+	background color: blue;
+}

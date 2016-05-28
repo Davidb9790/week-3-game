@@ -1,0 +1,22 @@
+h1{
+	font-size: 36px;
+	text-align: center;
+}
+/*referto a class with period then class name*/
+.container{
+	background-color:gray;
+
+}
+.p{
+	border:5px black;
+}
+.characters{
+	width: 95%;
+	height: 95%;
+}
+.button{
+	margin: 5px;
+}
+.text{
+	text-align: center;
+}
